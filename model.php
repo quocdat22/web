@@ -21,7 +21,7 @@ switch ($action) {
         break;
     case 'update':
         $sql = "update sinhvien set ten = '$ten' where ma = '$ma'";
-        mysqli_query($connect,$sql);
+        mysqli_query($connecit,$sql);
         break;
     case 'delete':
         $sql = "delete from sinhvien where ma = '$ma'";
