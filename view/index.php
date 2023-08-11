@@ -1,6 +1,7 @@
 <h1>Danh sach SV</h1>
 <a href="?action=create">Them sv</a>
 <a href="?action=create">Test sv</a>
+<a href="?action=create">Test2 sv</a>
 <table border="1" width="100%">
     <tr>
         <th>Ma</th>
