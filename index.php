@@ -1,10 +1,8 @@
 <?php
 
 
-$controller = '';
-if(!empty($_GET['controller'])){
-    $controller = $_GET['controller'];
-}
+$controller =  $_GET['controller'] ?? '';
+$action =  $_GET['action'] ?? '';
 
 switch($controller){
     case '':
