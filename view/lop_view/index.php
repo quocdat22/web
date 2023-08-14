@@ -1,3 +1,5 @@
+<?php include 'view/menu.php'; ?>
+
 <h1>Danh sach lop</h1>
 
 <a href="?action=create&controller=lop">Them lop</a>

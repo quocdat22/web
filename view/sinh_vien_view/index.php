@@ -1,3 +1,4 @@
+<?php include 'view/menu.php'; ?>
 <h1>Danh sach sinh vien</h1>
 
 <a href="?action=create&controller=sinh_vien">Them sinh_vien</a>
