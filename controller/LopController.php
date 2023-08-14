@@ -2,40 +2,37 @@
 
 class LopController{
 
-    function index(){
+    public function index():void{
         require 'model/Lop.php';
         $arr = (new Lop())->all();
         require 'view/lop/index.php';
     }
-    function create(){
+    public function create():void{
         require 'view/lop/create.php';
     }
-    function store(){
-        $ten = $_POST['ten'];
-        $ho = $_POST['ho'];
+    public function store():void{
+        
         require 'model/Lop.php';
-        (new Lop())->create($ten, $ho);
+        (new Lop())->create($_POST);
         header('Location: index.php');  
     }
-    function edit(){
+    public function edit():void{
         $ma = $_GET['ma'];
         require 'model/Lop.php';
         $first = (new Lop())->find($ma);
         require 'view/lop/edit.php';
     }
-    function update(){
-        $ma = $_POST['ma'];
-        $ten = $_POST['ten'];
-        $ho = $_POST['ho'];
+    public function update():void{
+        
         require'model/Lop.php';
-        (new Lop())->update($ten,$ho,$ma);
+        (new Lop())->update($_POST);
         header('Location: index.php');
     }
 
-    function delete(){
-        $ma = $_GET['ma'];
+    public function delete():void{
+        
         require'model/Lop.php';
-        (new Lop())->delete($ma);
+        (new Lop())->delete($_GET['ma']);
         header('Location: index.php');
     }
     
