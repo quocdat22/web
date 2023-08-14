@@ -15,7 +15,7 @@ switch($action){
         $ma_lop = $_POST['lop'];
         require 'model/sinh_vien_model.php';
         sinh_vien_store($ten_sinh_vien,$ma_lop);
-        header('location:index.php?controller=sinh_vien');
+        redirectToIndex();
         break;
     case 'edit':
         require 'model/lop_model.php';
@@ -31,14 +31,23 @@ switch($action){
         $ma_lop = $_POST['lop'];
         require 'model/sinh_vien_model.php';
         sinh_vien_update($ten_sinh_vien,$ma_lop,$ma_sinh_vien);
-        header('location:index.php?controller=sinh_vien');
+        
+        redirectToIndex();
         break;
     case 'delete':
         $ma_sinh_vien = $_GET['ma'];
         require 'model/sinh_vien_model.php';
-        header('location:index.php?controller=sinh_vien');
+        sinh_vien_delete($ma_sinh_vien);
+        redirectToIndex();
         break;
     default:
         echo "action not allowed";
         break;
+
+
+}
+
+function redirectToIndex() {
+    header('location:index.php?controller=sinh_vien');
+    exit();
 }

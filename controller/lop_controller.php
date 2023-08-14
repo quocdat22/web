@@ -12,7 +12,7 @@ switch($action){
         $ten_lop = $_POST['ten_lop'];
         require 'model/lop_model.php';
         lop_store($ten_lop);
-        header('location:index.php?controller=lop');
+        redirectToIndex();
         break;
     case 'edit':
         $ma_lop = $_GET['ma'];
@@ -25,16 +25,21 @@ switch($action){
         $ten_lop = $_POST['ten_lop'];
         require 'model/lop_model.php';
         lop_update($ten_lop, $ma_lop);
-        header('location:index.php?controller=lop');
+        redirectToIndex();
         break;
     case 'delete':
         $ma_lop = $_GET['ma'];
         require 'model/lop_model.php';
         lop_delete($ma_lop);
-        header('location:index.php?controller=lop');
+        redirectToIndex();
         break;
    
     default:
         echo "action not allowed";
         break;
+}
+
+function redirectToIndex() {
+    header('location:index.php?controller=lop');
+    exit();
 }
