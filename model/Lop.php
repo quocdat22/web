@@ -1,10 +1,8 @@
 <?php
-require 'model/Connect.php';
+require_once 'model/Connect.php';
 require 'model/LopObject.php';
 class Lop{
     
-
-
     function all():array {
         
 
